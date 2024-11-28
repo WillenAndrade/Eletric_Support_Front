@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+span {
+    font-size: 14px;
+}
+
+.topButtons {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .btnHome:hover {
+        color: rgb(22, 65, 185);
+    }
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgb(166, 225, 233), rgb(4,4,32), rgb(166, 225, 233));
+    background-size: cover;
+}
+
+.box {
+    width: 280px;
+    height: 430px;
+    border-radius: 15px;
+    border-radius: 25px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    transition: 0.3s ease-in-out;
+    box-shadow: 3px 2px 1px;
+    position: relative;
+    border: 2px solid rgb(22, 65, 185);
+}
+
+.box:hover {
+    
+    border: 2px solid rgb(214, 140, 3);
+}
+
+.exit {
+    width: 20px;
+    height: 20px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 2%;
+    left: 90%;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+} 
+    .exit:hover {
+            color:rgb(22, 65, 185);
+            transition: 0.3s ease-in-out;
+        }
+        .exit p {
+            font-size: 22px;
+        }
+
+.project-title {
+    height: 40px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(17, 46, 124);
+    transition: 0.3s ease-in-out;
+}
+
+    .project-title:hover {
+        background: linear-gradient(to right, lightblue,white,lightblue);
+    }
+  
+.circuitCabe {
+   margin: 0;
+}
+
+.circuitCabe, .circuitType, .circuitTension {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+.circuitTension.active {
+    visibility: hidden;
+}
+
+select {
+    height: 40px;
+    border-radius: 4px;
+    outline: 1px solid gray;
+    border-radius: 8px;
+}
+
+select:focus {
+    outline: 1px solid black;
+}
+
+input {
+    border-radius: 4px;
+    height: 40px;
+    font-size: 18px;
+    padding: 0 0 0 10px;
+    border-radius: 8px;
+}
+
+input:focus {
+    outline: 1px solid black;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+ {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    border-radius: 8px;
+}
+
+.circuitInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.circuitDetails {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.typeInfo {
+    width: 100px;
+}
+
+.circuitPotence {
+    display: flex;
+    gap: 30px;
+    margin: 10px 0 0 0;
+}
+
+.numberDisplay {
+    width: 60px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.numberDisplay .left {
+    width: 25%;
+    height: 90%;
+    background: black;
+    color: white;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 2px;
+    border-radius: 3px;
+    
+}
+.numberDisplay .right {
+    width: 25%;
+    height: 90%;
+    background: black;
+    color: white;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 2px;
+    border-radius: 3px;
+}
+
+.numberDisplay  a {
+    color: white;
+}
+
+.numberDisplay .middle {
+    font-size: 35px;
+}
+
+ .circuitName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.circuitName .nameInfo {
+    font-size: 18px;
+    width: 150px;
+}
+
+.amount, .potence {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formAddDevices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.addDevicesTitle {
+    width: 100%;
+    font-size: 16px;
+    margin: 0;
+    color: black;
+    font-weight: bold;
+
+}
+
+.circuitAddPotence {
+    display: flex;
+    gap: 30px;
+}
+
+.addDevices {
+    display: flex;
+    align-items: center;
+    width: 228px;
+    gap: 10px;
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.btn-addDevices {
+    width: 20px;
+    height: 20px;
+    background: black;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.btn-addDevices.active {
+    transform: rotate(-180deg);
+}
+
+.amper {
+    font-size: 18px;
+}
+.amperInfo {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(7, 7, 63);
+    margin-top: 10px;
+}
+.amperInfo.active {
+    color: rgb(138, 4, 4);
+}
+
+.amountInfo, .potenceInfo {
+    width: 100px;
+}
+
+.topButtons {
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.btn-bottom {
+    width: 99%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: orange;
+}
+
+.btnSubmit {
+    width: 80px;
+    height: 30px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px 12px;
+    border: 2px solid black;
+    transition: 0.3s ease-in-out;
+    
+}   .btnSubmit:hover {
+    border: 2px solid rgb(22, 65, 185);
+    background: white;
+}
+
+.btnSubmit:hover >  .FaGreaterThan {
+    color: rgb(22, 65, 185);
+}
+
+.btnTable {
+    width: 120px;
+    height: 30px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px 12px;
+    border: 2px solid black;
+    transition: 0.3s ease-in-out;
+}
+
+    .btnTable:hover {
+        color:rgb(22, 65, 185);
+        border: 2px solid rgb(22, 65, 185);
+    }
+    .btnTable.active {
+        display: none;
+    }
+
+.threePhase {
+    width: 62px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.threePhase h2 {
+    font-size: 16px;
+    margin-top: 20px;
+    color: rgb(179, 37, 49);
+}
+
+.FaGreaterThan {
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+@media (min-width: 360px) {
+    .box {
+        width: 300px;
+        height: 430px;
+    }
+}

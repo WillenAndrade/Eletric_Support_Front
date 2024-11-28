@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+    padding: 40px;
+}
+
+.es-logo {
+    display: none;
+}
+    .es-logo:hover {
+        color:rgb(22, 65, 185);
+        border: 2px solid rgb(22, 65, 185);
+        background: white;
+    }
+
+form {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.toggle-login-div {
+    display: none;
+}
+
+    .login-btn {
+        cursor: pointer;
+        background: white;
+        border-radius: 30px;
+        color: black;
+        padding: 5px 8px;
+        color: rgb(22, 65, 185);
+        transition: 0.3s ease-in-out;
+    }
+        .login-btn:hover {
+            color: black;
+        }
+    .sign-up-btn {
+        cursor: pointer;
+        background: black;
+        border-radius: 30px;
+        color: white;
+        padding: 5px 8px;
+        border: 1px solid black;
+    }   
+        .sign-up-btn:hover {
+            border: 1px solid white;
+        }
+
+    .toggle-login-div.active{
+        width: 160px;
+        height: 40px;
+        background: white;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 5px;
+        transition: 0.3s ease-in-out;
+    }
+
+.form-login {
+    text-align: center;
+    display: none;
+}
+    .form-login.active {
+        display: block
+    }
+
+.message {
+    color: red;
+    font-size: 14px;
+}
+
+.message.active {
+    display: none;
+}
+
+button {
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    border: 2px solid black;
+}
+    button:hover {
+        color:rgb(22, 65, 185);
+        border: 2px solid rgb(22, 65, 185);
+    }
+
+input[type=text], input[type=password] {
+    width: 150px;
+    color:rgb(22, 65, 185);
+}
+
+input[type=text]::placeholder, input[type=password]::placeholder {
+   color: black;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    border-color: rgb(17, 43, 115); 
+    outline: none;
+}
+
+.home-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-title {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.secundary-title {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.secundary-title h2 {
+    color: black;
+}
+
+.es-title {
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    animation: pulse-animation 1s infinite ease-in-out;
+}
+
+    .es-title:hover {
+        transform: translateY(-10px);
+    }
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    width: 70%;
+    color: rgb(73, 72, 72);
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a::after {
+    color: white;
+}
+
+.home-buttons {
+    width: 50%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 150px;
+}
+    .get-start-btn {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: black;
+        border-radius: 50px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        font-family: 'Poppins', sans-serif;
+        font-size: 35px;
+        transition: 0.3s ease-in-out;
+    }
+    .get-start-btn:hover {
+        background: white;
+        color: rgb(22, 65, 185);
+        border: 2px solid;
+    }
+    
+
+    .learn-more-btn {
+        width: 150px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        transition: 0.3s ease-in-out;
+        color: black;
+        cursor: pointer;
+    }
+    .learn-more-btn:hover {
+        transform: translateY(-8px);
+        color: green;
+    }
+
+    @media (min-width: 300px) {
+        header {
+            width: 100%;
+            height: 200px;
+            background: black;
+            justify-content: center;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        input[type=text], input[type=password] {
+            width: 250px;
+            color:rgb(22, 65, 185);
+        }
+
+    }
+
+    @media (min-width: 360px) {
+        header {
+            width: 100%;
+            height: 70px;
+            background: black;
+            justify-content: center;
+        }
+        form {
+            display: flex;
+            gap: 3px;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        input[type=text], input[type=password] {
+            width: 140px;
+            color:rgb(22, 65, 185);
+        }
+    }
+
+    @media (min-width: 380px) {
+        header {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            padding: 40px;
+        }
+        
+        form {
+            display: flex;
+            gap: 5px;
+            justify-content: right;
+        }
+
+        input[type=text], input[type=password] {
+            width: 150px;
+            color:rgb(22, 65, 185);
+        }
+    }
+    
+    @media (min-width: 700px) {
+        header {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background: black;
+            padding: 40px;
+        }
+
+        .es-logo {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            font-family: 'Poppins', sans-serif;
+            font-size: 30px;
+            transition: 0.3s ease-in-out;
+            border: 2px solid white;
+        }
+            .es-logo:hover {
+                color:rgb(22, 65, 185);
+                border: 2px solid rgb(22, 65, 185);
+                background: white;
+            }
+    }
+    
+    @media (min-width: 800px) {
+        
+    }
+    
+    @media (min-width: 900px) {
+       
+    }
+
+    @keyframes pulse-animation {
+        0% {
+          transform: scale(1); 
+        }
+        50% {
+          transform: scale(1.05); 
+        }
+        100% {
+            transform: scale(1); 
+          }
+      }

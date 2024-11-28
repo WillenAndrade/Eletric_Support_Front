@@ -1,0 +1,153 @@
+.materials-container {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+    .materials-list {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        text-align: center;
+        background: white;
+        border-radius: 25px;
+        padding: 10px 20px;
+        margin: 20px 0;
+    }   
+
+    .product-items {
+        min-width: 140px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        border-radius: 40px;
+        font-size: 12px;
+    } 
+        .product-items:hover {
+            border: 2px solid rgb(33, 131, 163);
+        }
+        .product-items:hover > .product-icon {
+            transform: translatey(-10px);
+        }
+    
+    .product-items h2 {
+        font-size: 20x;
+        color: black;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+          
+    }
+
+    .product-items h2:hover {
+        color:rgb(22, 65, 185);
+        font-weight: bold;
+        
+    } 
+            .product-icon {
+                height: 30px;
+                background: white;
+                transition: 0.3s ease-in-out;
+            } 
+
+    .product-items p {
+        color: black;
+        margin-top: 5px;
+    }
+
+    .light-icon {
+        width: 40px;
+        height: 50px;
+        background-image: url("../assets/imagens/lampada2.png");
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .outlet-icon {
+        width: 40px;
+        height: 50px;
+        background-image: url("../assets/imagens/tomada2.png");
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .shower-icon {
+        width: 60px;
+        height: 55px;
+        background-image: url("../assets/imagens/chuveiro4.png");
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .air-icon {
+        width: 50px;
+        height: 40px;
+        background-image: url("../assets/imagens/ar2.png");
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .motor-icon {
+        width: 50px;
+        height: 40px;
+        background-image: url("../assets/imagens/motor1.png");
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+    }
+    .panel-icon {
+        width: 50px;
+        height: 40px;
+        background-image: url("../assets/imagens/painel1.png");
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+
+    }
+
+    @media (min-width: 400px) {
+        .materials-container {
+            min-height: 40vh;
+        }
+        .product-items {
+            height: 100px;
+        }
+    }
+
+    @media (min-width: 600px) {
+        .materials-container {
+            min-height: 40vh;
+        }
+        .product-items {
+            height: 100px;
+        }
+    }
+
+    @media (min-width: 700px) {
+        .materials-container {
+            min-height: 40vh;
+        }
+    }
+
+    @media (min-width: 800px) {
+        .materials-container {
+            min-height: 40vh;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        .materials-container {
+            height: 30vh;
+        }
+    }
