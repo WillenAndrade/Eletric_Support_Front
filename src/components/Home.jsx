@@ -2,11 +2,12 @@ import './Home.css'
 import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import axiosInstance from '../utils/axiosConfig'
 
 const Home = () => {
     const [usernameOrEmail, setUserNameOrEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [isLogged, setIsLogget] = useState(localStorage.getItem('localIsLogged'))
+    const [isLogged, setIsLogged] = useState(localStorage.getItem('localIsLogged'))
     const [toggleLoginBtn, setToggleLoginBtn] = useState(false)
     const [message, setMessage] = useState(false)
     const baseUrl = 'http://localhost:3000'
@@ -18,44 +19,34 @@ const Home = () => {
             console.log(`LocalSlogged: ${localStorage.getItem("localIsLogged")}`)
     })
 
+        const Login = async (e) => {
+            e.preventDefault();
 
-const Login = async (e) => {
-    e.preventDefault();  // Prevent default form submission
+            try {
 
-    try {
-        // Send the login request with username and password
-        const response = await axios.post(
-            `${baseUrl}/login`,
-            JSON.stringify({ usernameOrEmail, password }),
-            {
-                headers: { 'Content-Type': 'application/json' },
+                console.log('Iniciando login...');
+                const response = await axiosInstance.post(`/login`, { usernameOrEmail, password });
+                window.alert(usernameOrEmail)
+                localStorage.setItem("userNameOrEmail", usernameOrEmail)
+                console.log('Resposta do servidor:', response.data);
+                const { token, refreshToken } = response.data.data;
+                console.log('Tokens recebidos:', { token, refreshToken });
+                if (token && refreshToken) {
+                    localStorage.setItem('accessToken', token);
+                    localStorage.setItem('refreshToken', refreshToken);
+                    localStorage.setItem('isLogged', true);
+                    localStorage.setItem("localIsLogged", true);
+                    window.location.href = '/projects';
+                }
+            } catch (error) {
+                if (error.response && error.response.status === 401) {
+                    console.log('Credenciais inválidas.');
+                    setMessage(true);
+                } else {
+                    console.log('Erro ao acessar o servidor.');
+                }
             }
-        );
-
-        // Assuming the backend responds with a JWT token
-        const { token } = response.data;
-
-        if (token) {
-            // Store the token in localStorage after successful login
-            localStorage.setItem('authToken', token);  // Save the JWT token in localStorage
-            localStorage.setItem("localIsLogged", true);  // Optionally save login status
-
-            // Redirect user to the projects page
-            window.location.href = '/projects';
-        }
-
-       // window.alert(`Logged in successfully. Token: ${token}`);
-       // console.log(`Logged in successfully. Token: ${token}`)
-
-    } catch (error) {
-        if (!error.response) {
-            console.log("Error while accessing the server.");
-        } else if (error.response.status === 401) {
-            console.log("Invalid credentials...");
-            setMessage(true); // Show message for invalid credentials
-        }
-    }
-};
+        };
 
     return (
         <>

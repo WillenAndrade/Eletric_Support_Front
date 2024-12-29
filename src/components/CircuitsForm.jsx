@@ -61,7 +61,7 @@ const CircuitsForm = ({projectNumber, projectName}) => {
 
         async function getCircuitsTableCounter() {
             try {
-                const token = localStorage.getItem('authToken');  // Assuming the token is stored in localStorage
+                const token = localStorage.getItem('accessToken');  // Assuming the token is stored in localStorage
                 if (!token) {
                     console.log('Token not found');
                     return;  // Optionally handle missing token here
@@ -94,7 +94,7 @@ const CircuitsForm = ({projectNumber, projectName}) => {
     } 
 
     const handleSubmit = async (e) => {
-        const token = localStorage.getItem('authToken');  // Assuming the token is stored in localStorage
+        const token = localStorage.getItem('accessToken');  // Assuming the token is stored in localStorage
                 if (!token) {
                     console.log('Token not found');
                     return;  // Optionally handle missing token here

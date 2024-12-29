@@ -6,6 +6,7 @@ import { FaRegUser } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineMailOutline } from "react-icons/md";
+import axiosInstance from '../utils/axiosConfig'
 
 
 const SignUp = () => {
@@ -18,7 +19,7 @@ const SignUp = () => {
     const [formError, setFormError] = useState("")
     const baseUrl = 'http://localhost:3000'
 
-    const handleSignUp = async (e) => {
+   /* const handleSignUp = async (e) => {
         if (!validateEmail(email)) {
             setFormError('Por favor, insira um email válido.');
             return;
@@ -75,7 +76,71 @@ const SignUp = () => {
                 setFormError(true)
         }
         }
-    }
+    }*/
+
+       const handleSignUp = async (e) => {
+            e.preventDefault(); // Prevenir comportamento padrão do formulário
+        
+             // Estado para erros no formulário
+        
+            // Validações
+            if (!validateEmail(email)) {
+                setFormError('Por favor, insira um email válido.');
+                return;
+            }
+        
+            if (password !== confirmPassword) {
+                setFormError('As senhas não coincidem.');
+                return;
+            }
+        
+            if (!validatePassword(password)) {
+                setFormError('Senha deve conter pelo menos 8 caracteres e incluir números.');
+                return;
+            }
+        
+            try {
+                // Enviar a requisição para a API de signup
+                const response = await axiosInstance.post(
+                    `${baseUrl}/signup`,
+                    { username, email, password },
+                    {
+                        headers: { 'Content-Type': 'application/json' },
+                    }
+                );
+        
+                // Obter os tokens do backend
+                const { token, refreshToken } = response.data.data;
+        
+                if (token && refreshToken) {
+                    // Armazenar os tokens no localStorage
+                    localStorage.setItem('accessToken', token);
+                    localStorage.setItem('refreshToken', refreshToken);
+                    localStorage.setItem('localIsLogged', true); // Indicar que o usuário está logado
+        
+                    // Redirecionar o usuário para a página de projetos
+                    window.location.href = '/projects';
+                }
+            } catch (error) {
+                // Manipular erros retornados pelo servidor
+                if (error.response) {
+                    const errorMessage = error.response.data.message;
+        
+                    if (errorMessage === 'Este email já está em uso.') {
+                        setFormError('Este email já está em uso.');
+                    } else if (errorMessage === 'Este nome de usuário já está em uso.') {
+                        setFormError('Este nome de usuário já está em uso.');
+                    } else {
+                        setFormError(errorMessage);
+                    }
+                } else {
+                    console.error('Erro ao acessar o servidor:', error);
+                    setFormError('Erro ao acessar o servidor.');
+                }
+            }
+        };
+
+       
 
     const validateEmail = (email) => {
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;

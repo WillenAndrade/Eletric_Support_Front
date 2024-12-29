@@ -9,7 +9,6 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { IoMdExit } from "react-icons/io";
 
-
 const ProjectsScreen = () => {
     const [localProjectNumber, setLocalProjectNumber] = useState(localStorage.getItem('localprojectnumber'))
     const [localProjectName, setLocalProjectName] = useState(localStorage.getItem('localprojectname'))
@@ -22,53 +21,91 @@ const ProjectsScreen = () => {
     const [localUpdateId, setLocalUpdateId] =  useState()
     const [updateId, setUpdateId] = useState(localUpdateId !== null ? localUpdateId : "")
     const baseUrl = 'http://localhost:3000'
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('accessToken');
+    const userNameOrEmail = localStorage.getItem("userNameOrEmail")
+    const [userName, setUserName] = useState(null);
+ 
    
     useEffect(() => {
                              getProjectNames()
     },[])
 
+    useEffect(() => {
+                        //  getUserName()
+                        
+                        window.alert(userNameOrEmail)
+    },[])
+
+    async function getUserName() {
+        try {
+            if (!token) {
+                console.log('Nenhum token encontrado. Por favor, faça login.');
+                return;
+            }
+    
+            const response = await axios.get(`${baseUrl}/users/${userNameOrEmail}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+    
+            const data = response.data;
+    
+            if (data && data.message) {
+                const { name } = data.message; // Extrair o nome do usuário
+                console.log(`Nome do usuário: ${name}`);
+                setUserName(name); // Supondo que você tenha uma função de estado `setUserName`
+            } else {
+                console.log('Resposta inesperada do servidor:', data);
+            }
+        } catch (error) {
+            console.error('Erro ao obter o nome do usuário:', error);
+    
+            if (error.response) {
+                console.log('Erro do servidor:', error.response.data);
+    
+                if (error.response.status === 401) {
+                    console.log('Token expirado ou inválido. Por favor, faça login novamente.');
+                }
+            } else {
+                console.log('Erro de rede ou outro erro:', error.message);
+            }
+        }
+    }
+
         async function getProjectNames() {
+
             try {
-                // Obtenha o token do localStorage
-              //  const token = localStorage.getItem('authToken');
-                
-                // Verifique se o token está disponível
+             
                 if (!token) {
                     console.log('Nenhum token encontrado. Por favor, faça login.');
                     return;
                 }
         
-                // Envie a requisição GET para o endpoint /projects com o token no cabeçalho
                 const response = await axios.get(`${baseUrl}/projects`, {
                     headers: {
-                        'Authorization': `Bearer ${token}`  // Inclua o token no cabeçalho Authorization
+                        'Authorization': `Bearer ${token}`  
                     }
                 });
         
-                // A resposta pode ter diferentes formatos, dependendo de como o servidor a envia
                 const data = response.data;
         
-                // Se a resposta contiver uma chave "message" com os projetos, use-a
                 if (data && data.message) {
-                    setProjects(data.message);  // Atualize o estado com os projetos
+                    setProjects(data.message);  
                 } else {
                     console.log('Resposta inesperada do servidor:', data);
                 }
             } catch (error) {
                 console.error('Erro ao obter projetos:', error);
-        
-                // Caso haja uma resposta de erro do servidor
+ 
                 if (error.response) {
-                    // Exibe o erro específico do servidor
+  
                     console.log('Erro do servidor:', error.response.data);
-                    // Verifique o código de status
+                  
                     if (error.response.status === 401) {
                         console.log('Token expirado ou inválido. Por favor, faça login novamente.');
-                        // Adicione qualquer lógica para redirecionar o usuário para a página de login, se necessário
                     }
                 } else {
-                    // Se o erro não for relacionado à resposta do servidor (ex.: erro de rede)
                     console.log('Erro de rede ou outro erro:', error.message);
                 }
             }
@@ -79,7 +116,7 @@ const ProjectsScreen = () => {
         setCreateProject(false)
         let linkNumber = setLinkNumber()
 
-           const token = localStorage.getItem('authToken');
+           const token = localStorage.getItem('accessToken');
                 
                 if (!token) {
                     console.log('Nenhum token encontrado. Por favor, faça login.');
@@ -109,7 +146,7 @@ const ProjectsScreen = () => {
 
 
 async function deleteProjectAndCircuits(project) {
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('accessToken');
                 
     if (!token) {
         console.log('Nenhum token encontrado. Por favor, faça login.');
@@ -117,33 +154,30 @@ async function deleteProjectAndCircuits(project) {
     }
 
     try {
-        // Primeiro, exclui os circuitos relacionados ao projeto
         const deleteCircuitsResponse = await axios.delete(`${baseUrl}/circuits${project.linkNumber}/circuits${project.linkNumber}`, {
             headers: {
-                'Authorization': `Bearer ${token}`,  // Passa o token de autenticação
-                'Content-Type': 'application/json'   // Define o tipo de conteúdo como JSON
+                'Authorization': `Bearer ${token}`,  
+                'Content-Type': 'application/json'   
             }
         });
 
         console.log('Circuitos excluídos com sucesso:', deleteCircuitsResponse.data);
 
-        // Agora, exclui o projeto
         const deleteProjectResponse = await axios.delete(`${baseUrl}/projects/${project.id}`, {
             headers: {
-                'Authorization': `Bearer ${token}`,  // Passa o token de autenticação
-                'Content-Type': 'application/json'   // Define o tipo de conteúdo como JSON
+                'Authorization': `Bearer ${token}`,  
+                'Content-Type': 'application/json'   
             }
         });
 
         const { status, message } = deleteProjectResponse.data;
         if (status) {
-            console.log(message);  // Exibe a mensagem de sucesso
-            await getProjectNames();  // Atualiza a lista de projetos após a exclusão
+            console.log(message);  
+            await getProjectNames(); 
         } else {
             console.log('Erro ao excluir o projeto:', message);
         }
     } catch (error) {
-        // Aqui você trata os erros relacionados à exclusão dos circuitos e/ou do projeto
         if (error.response && error.response.status === 403) {
             console.log('Access Denied: Token inválido ou não fornecido.');
         } else {
@@ -152,8 +186,7 @@ async function deleteProjectAndCircuits(project) {
     }
 }
 
-async function onUpdateProject(e) {
-    
+async function onUpdateProject(e) {   
     try {
         const response = await axios.put(`${baseUrl}/projects/${updateId}`,
         JSON.stringify({projectName}),
@@ -232,9 +265,14 @@ const setLinkNumber = () => {
         setCreateProject(false)
     }
     const handleLogout = () => {
-        localStorage.setItem("localIsLogged", false)
-        localStorage.setItem("authToken", null)
-    }
+        localStorage.removeItem("localIsLogged"); // Remove a chave completamente
+        localStorage.removeItem("accessToken");  // Remove o token de acesso
+        localStorage.removeItem("refreshToken"); // Opcional: remova também o refresh token
+        localStorage.removeItem("localIsLogged");
+        window.location.href = "/login"; // Redireciona para a página de login
+    };
+
+   
 
     return (
      <>

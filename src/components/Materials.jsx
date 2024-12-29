@@ -19,7 +19,7 @@ const Materials = ({projectNumber}) => {
 
     async function getMaterials(){
         try {
-            const token = localStorage.getItem('authToken');
+            const token = localStorage.getItem('accessToken');
                 
             // Handle missing token
             if (!token) {

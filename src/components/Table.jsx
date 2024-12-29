@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import './Table.css'
+
 import Materials from './Materials';
 import axios from 'axios'
 import generatePDF, { Resolution, Margin } from 'react-to-pdf';
@@ -10,7 +11,6 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 import { FaArrowLeft } from "react-icons/fa";
 import { TbTableShortcut } from "react-icons/tb";
 import { IoMdExit } from "react-icons/io";
-
 
         const options = {
             filename: "Tabela.pdf", 
@@ -72,41 +72,34 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
         async function getCircuits() {
             
             try {
-               const token = localStorage.getItem('authToken');
-                
-                // Handle missing token
+               const token = localStorage.getItem('accessToken');
+
                 if (!token) {
                     console.log('Token not found');
                     return;  // Optionally handle missing token here
                 }
         
-                // Send GET request with the Bearer token in the Authorization header
                 const response = await axios.get(`${baseUrl}/circuits${projectNumber}`, {  
                     headers: {
-                        'Authorization': `Bearer ${token}`  // Send the token as a Bearer token
+                        'Authorization': `Bearer ${token}`  
                     }
                 });
         
-                // Assuming response.data.message is an array of circuits
+                
+                
                 const data = response.data.message;
         
                 if (Array.isArray(data)) {
-                    // Sort the array based on count property
                     data.sort((a, b) => a.count - b.count);
-                    
-                    // Set the sorted data to the state
                     setCircuitsTable(data);   
                 } else {
                     console.error('Expected an array, but received:', data);
                 }
         
             } catch (error) {
-                // Handle errors
                 console.log('Error fetching circuits:', error);
         
-                // Optionally handle specific HTTP errors based on status code
                 if (error.response) {
-                    // Handle 403 (Unauthorized) or other status codes
                     if (error.response.status === 403) {
                         console.log('Access Denied: Invalid or expired token');
                     } else {
@@ -120,17 +113,17 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
 
         async function onDeleteCircuit(circuit) {
             try {
-                const token = localStorage.getItem('authToken');
+                const token = localStorage.getItem('accessToken');
+                console.log(token)
                 
-                // Handle missing token
                 if (!token) {
                     console.log('Token not found');
-                    return;  // Optionally handle missing token here
+                    return;  
                 }
 
                 const response = await axios.delete(`${baseUrl}/circuit${projectNumber}/${circuit.id}`, {
                         headers: {
-                            'Authorization': `Bearer ${token}`  // Send the token as a Bearer token
+                            'Authorization': `Bearer ${token}`  
                         }}
                 );
                 const { status, message } = response.data; 
@@ -448,7 +441,6 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
         }
             return generalBreaker
     }
-
               const advicesList = [
                     "A NBR 5410 é uma norma desenvolvida pela Associação Brasileira de Normas Técnicas (ABNT), determina as regras envolvendo as instalações elétricas residenciais.",
               ]
@@ -507,14 +499,10 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
             <p className="tableMessage">Não há circuitos nesta tabela...</p>}
             {circuitsTable.length > 0 && <p className="note">Aplicar fator de demanda para sua localidade..</p>}
             {circuitsTable.length > 0 && <Materials  projectNumber={projectNumber} reloadMaterials={reloadMaterials} />}
-                
            </div>
-
            <div className='advicePhrase'>
             {circuitsTable.length > 0 && <p className='advicePhrase-paragraph'>" {advice} "</p>}
            </div>
-
-
             <div className="tableButtons">
                 <div className="btnBack" onClick={()=> reloadToForm()}><FaArrowLeft size={26} /></div>
                 {circuitsTable.length > 0 && <div className="tableContainer" onClick={()=> generatePDF(getTargetElement, options)}>
