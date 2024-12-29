@@ -26,7 +26,6 @@ const Home = () => {
 
                 console.log('Iniciando login...');
                 const response = await axiosInstance.post(`/login`, { usernameOrEmail, password });
-                window.alert(usernameOrEmail)
                 localStorage.setItem("userNameOrEmail", usernameOrEmail)
                 console.log('Resposta do servidor:', response.data);
                 const { token, refreshToken } = response.data.data;

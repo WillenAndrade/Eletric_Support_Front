@@ -23,20 +23,24 @@ const ProjectsScreen = () => {
     const baseUrl = 'http://localhost:3000'
     const token = localStorage.getItem('accessToken');
     const userNameOrEmail = localStorage.getItem("userNameOrEmail")
-    const [userName, setUserName] = useState(null);
+    const [userName, setUserName] = useState("")
  
-   
     useEffect(() => {
                              getProjectNames()
     },[])
 
     useEffect(() => {
-                        //  getUserName()
+                          getUserName(userNameOrEmail)
                         
-                        window.alert(userNameOrEmail)
+                        
     },[])
 
-    async function getUserName() {
+    async function getUserName(userNameOrEmail) {
+        if (!userNameOrEmail) {
+            console.log('Por favor, forneça um nome de usuário ou e-mail.');
+            return;
+        }
+    
         try {
             if (!token) {
                 console.log('Nenhum token encontrado. Por favor, faça login.');
@@ -54,7 +58,7 @@ const ProjectsScreen = () => {
             if (data && data.message) {
                 const { name } = data.message; // Extrair o nome do usuário
                 console.log(`Nome do usuário: ${name}`);
-                setUserName(name); // Supondo que você tenha uma função de estado `setUserName`
+                setUserName(name); // Certifique-se de que `setUserName` existe
             } else {
                 console.log('Resposta inesperada do servidor:', data);
             }
@@ -66,6 +70,8 @@ const ProjectsScreen = () => {
     
                 if (error.response.status === 401) {
                     console.log('Token expirado ou inválido. Por favor, faça login novamente.');
+                } else if (error.response.status === 404) {
+                    console.log('Usuário não encontrado.');
                 }
             } else {
                 console.log('Erro de rede ou outro erro:', error.message);
@@ -283,6 +289,7 @@ const setLinkNumber = () => {
             <div className="project-container">
                  
                 <div onClick={()=> handleLogout()}><Link to="/" className="btn-home"><IoMdExit size={40} /></Link></div>
+                <p>Bem vindo <span id='span-user'>{userName}</span><span id='span-user'>!</span></p>
                 <div className="my-projects" onClick={()=> renderProjects()}><CiFolderOn className="folder-on"/><p>PROJETOS</p></div>
                 <div>
                         {projects.map((resp, index) => (

@@ -23,6 +23,7 @@ const CircuitsForm = ({projectNumber, projectName}) => {
     const [addPotence, setAddPotence] = useState(0)
     const [addAmount, setAddAmount] = useState(1)
     const [renderTable, setRenderTable] = useState(false)
+    //const [renderTable, setRenderTable] = useState(localStorage.getItem("localRenderTable"))
     const [localProjectNumber , setLocalProjectNumber] = useState("")
     const [localProjectName , setLocalProjectName] = useState("")
     const baseUrl = 'http://localhost:3000'
@@ -151,29 +152,6 @@ const CircuitsForm = ({projectNumber, projectName}) => {
         } 
         calcAmperPotence()
      }
-/*
-     const calcAmperPotence = () => {
-        let demandFactor = {
-            status: true,
-            value: 0.76
-        }
-        if (demandFactor.status) {
-            let addAmper = addPotence * addAmount / tension
-            let preAmper = potence * amount / tension
-            let posAmper = preAmper + addAmper
-            setAmper(posAmper.toFixed(2))
-            let total = (potence * amount) / demandFactor.value
-            setTotalPotence(total.toFixed(2))
-        } else {
-            let addAmper = addPotence * addAmount / tension
-            let preAmper = potence * amount / tension
-            let posAmper = preAmper + addAmper
-            setAmper(posAmper.toFixed(2))
-            let total = potence * amount
-            setTotalPotence(total.toFixed(2))
-        }
-       
-     }*/
 
         const calcAmperPotence = () => {
                 let addAmper = addPotence * addAmount / tension

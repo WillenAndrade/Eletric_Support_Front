@@ -129,6 +129,8 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
                 const { status, message } = response.data; 
             
                 await getCircuits(); 
+                localStorage.setItem("localRenderTable", true)
+                window.location.reload(true)
                 setReloadMaterials(!reloadMaterials)
                 
             
@@ -336,6 +338,7 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
         window.location.reload(true)
     }
     const reloadToForm = () => {
+        localStorage.setItem("localRenderTable", false)
         window.location.reload(true)
     }
       
