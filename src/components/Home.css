@@ -113,7 +113,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 .home-container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -141,6 +141,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 .secundary-title h2 {
     color: black;
+    font-size: 22px;
 }
 
 .es-title {

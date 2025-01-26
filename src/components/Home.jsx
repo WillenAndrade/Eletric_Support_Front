@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import axiosInstance from '../utils/axiosConfig'
+import HomeMarketing from './HomeMarketing'
 
 const Home = () => {
     const [usernameOrEmail, setUserNameOrEmail] = useState("")
@@ -18,6 +19,10 @@ const Home = () => {
         }
             console.log(`LocalSlogged: ${localStorage.getItem("localIsLogged")}`)
     })
+
+    useEffect(()=> {
+        localStorage.removeItem("userNameOrEmail")
+    },[])
 
         const Login = async (e) => {
             e.preventDefault();
@@ -75,6 +80,7 @@ const Home = () => {
                 <h2>"O poder de cálculos de circuitos sem esforço."</h2>
             </div>
          </div>
+         <HomeMarketing />
         </>
     )
 }

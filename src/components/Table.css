@@ -179,7 +179,6 @@ i {
     color: white;
     background: black;
     border: 1px solid red;
-    
 }
     .btn-del-circuits:hover {
         color: rgb(22, 65, 185);
@@ -322,8 +321,9 @@ footer {
 
 
     .general-data-breaker {
-        font-size: 26px;
+        font-size: 24px;
         border: none;
+        color: #880000;
     }
 
     .general-data-potence {

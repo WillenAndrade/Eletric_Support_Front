@@ -76,7 +76,7 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
 
                 if (!token) {
                     console.log('Token not found');
-                    return;  // Optionally handle missing token here
+                    return;  
                 }
         
                 const response = await axios.get(`${baseUrl}/circuits${projectNumber}`, {  
@@ -238,6 +238,97 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
                 setMonoBreaker(200)
             } else if(A > 195 && A <= 205){
                 setMonoBreaker(205)
+            } else if(A > 200 && A <= 205){
+                setMonoBreaker(205)
+            } else if(A > 205 && A <= 210) {
+                setMonoBreaker(210)
+            } else if(A > 210 && A <= 215) {
+                setMonoBreaker(215)
+            } else if(A > 215 && A <= 220) {
+                setMonoBreaker(220)
+            } else if(A > 220 && A <= 225){
+                setMonoBreaker(225)
+            } else if(A > 225 && A <= 230){
+                setMonoBreaker(230)
+            } else if(A > 230 && A <= 235){
+                setMonoBreaker(235)
+            } else if(A > 235 && A <= 240){
+                setMonoBreaker(240)
+            } else if(A > 240 && A <= 245){
+                setMonoBreaker(245)
+            } else if(A > 245 && A <= 250){
+                setMonoBreaker(250)
+            } else if(A > 250 && A <= 255){
+                setMonoBreaker(255)
+            } else if(A > 255 && A <= 260){
+                setMonoBreaker(260)
+            } else if(A > 260 && A <= 265){
+                setMonoBreaker(265)
+            } else if(A > 265 && A <= 270){
+                setMonoBreaker(270)
+            } else if(A > 270 && A <= 275){
+                setMonoBreaker(275)
+            } else if(A > 275 && A <= 280){
+                setMonoBreaker(280)
+            } else if(A > 280 && A <= 285){
+                setMonoBreaker(285)
+            } else if(A > 285 && A <= 290){
+                setMonoBreaker(290)
+            } else if(A > 290 && A <= 295){
+                setMonoBreaker(295)
+            } else if(A > 295 && A <= 300){
+                setMonoBreaker(300)
+            } else if(A > 300 && A <= 305){
+                setMonoBreaker(305)
+            }
+
+
+            else if(A > 305 && A <= 310){
+                setMonoBreaker(310)
+            } else if(A > 310 && A <= 315){
+                setMonoBreaker(315)
+            } else if(A > 315 && A <= 320){
+                setMonoBreaker(320)
+            } else if(A > 325 && A <= 330) {
+                setMonoBreaker(330)
+            } else if(A > 330 && A <= 335) {
+                setMonoBreaker(335)
+            } else if(A > 335 && A <= 340) {
+                setMonoBreaker(340)
+            } else if(A > 340 && A <= 345){
+                setMonoBreaker(345)
+            } else if(A > 345 && A <= 350){
+                setMonoBreaker(350)
+            } else if(A > 350 && A <= 355){
+                setMonoBreaker(355)
+            } else if(A > 355 && A <= 360){
+                setMonoBreaker(360)
+            } else if(A > 360 && A <= 365){
+                setMonoBreaker(365)
+            } else if(A > 365 && A <= 370){
+                setMonoBreaker(370)
+            } else if(A > 370 && A <= 375){
+                setMonoBreaker(375)
+            } else if(A > 375 && A <= 380){
+                setMonoBreaker(380)
+            } else if(A > 380 && A <= 380){
+                setMonoBreaker(380)
+            } else if(A > 385 && A <= 390){
+                setMonoBreaker(390)
+            } else if(A > 390 && A <= 395){
+                setMonoBreaker(395)
+            } else if(A > 395 && A <= 400){
+                setMonoBreaker(400)
+            } else if(A > 400 && A <= 405){
+                setMonoBreaker(405)
+            } else if(A > 405 && A <= 410){
+                setMonoBreaker(410)
+            } else if(A > 410 && A <= 415){
+                setMonoBreaker(415)
+            } else if(A > 415 && A <= 420){
+                setMonoBreaker(420)
+            } else if(A > 420 && A <= 425){
+                setMonoBreaker(425)
             }
             else {
                 console.log("Os disjuntores 110 não suportam essa amperagem")
@@ -321,6 +412,126 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
             setDoubleBreaker(190)
         } else if (A > 195 && A <= 200) {
             setDoubleBreaker(200)
+        } else if (A > 200 && A <= 205) {
+            setDoubleBreaker(205)
+        } else if (A > 205 && A <= 210) {
+            setDoubleBreaker(210)
+        } else if (A > 210 && A <= 215) {
+            setDoubleBreaker(215)
+        } else if (A > 215 && A <= 220) {
+            setDoubleBreaker(220)
+        } else if (A > 220 && A <= 225) {
+            setDoubleBreaker(225)
+        } else if (A > 225 && A <= 230) {
+            setDoubleBreaker(230)
+        } else if (A > 230 && A <= 235) {
+            setDoubleBreaker(235)
+        } else if (A > 240 && A <= 245) {
+            setDoubleBreaker(245)
+        } else if (A > 245 && A <= 250) {
+            setDoubleBreaker(250)
+        } else if (A > 250 && A <= 255) {
+            setDoubleBreaker(255)
+        } else if (A > 255 && A <= 260) {
+            setDoubleBreaker(260)
+        } else if (A > 260 && A <= 265) {
+            setDoubleBreaker(265)
+        } else if (A > 265 && A <= 270) {
+            setDoubleBreaker(270)
+        } else if (A > 270 && A <= 275) {
+            setDoubleBreaker(275)
+        } else if (A > 275 && A <= 280) {
+            setDoubleBreaker(280)
+        } else if (A > 280 && A <= 285) {
+            setDoubleBreaker(285)
+        } else if (A > 285 && A <= 290) {
+            setDoubleBreaker(290)
+        } else if (A > 290 && A <= 295) {
+            setDoubleBreaker(295)
+        } else if (A > 295 && A <= 300) {
+            setDoubleBreaker(300)
+        } else if (A > 300 && A <= 305) {
+            setDoubleBreaker(305)
+        } else if (A > 305 && A <= 310) {
+            setDoubleBreaker(310)
+        } else if (A > 310 && A <= 315) {
+            setDoubleBreaker(315)
+        } else if (A > 315 && A <= 320) {
+            setDoubleBreaker(320)
+        } else if (A > 320 && A <= 325) {
+            setDoubleBreaker(325)
+        } else if (A > 325 && A <= 330) {
+            setDoubleBreaker(330)
+        } else if (A > 330 && A <= 335) {
+            setDoubleBreaker(140)
+        } else if (A > 340 && A <= 345) {
+            setDoubleBreaker(145)
+        } else if (A > 345 && A <= 350) {
+            setDoubleBreaker(150)
+        } else if (A > 350 && A <= 355) {
+            setDoubleBreaker(355)
+        } else if (A > 355 && A <= 340) {
+            setDoubleBreaker(340)
+        } else if (A > 340 && A <= 345) {
+            setDoubleBreaker(345)
+        } else if (A > 345 && A <= 350) {
+            setDoubleBreaker(350)
+        } else if (A > 355 && A <= 360) {
+            setDoubleBreaker(360)
+        } else if (A > 365 && A <= 370) {
+            setDoubleBreaker(370)
+        } else if (A > 370 && A <= 375) {
+            setDoubleBreaker(375)
+        } else if (A > 375 && A <= 380) {
+            setDoubleBreaker(375)
+        } else if (A > 380 && A <= 385) {
+            setDoubleBreaker(385)
+        } else if (A > 385 && A <= 390) {
+            setDoubleBreaker(390)
+        } else if (A > 390 && A <= 395) {
+            setDoubleBreaker(395)
+        } else if (A > 395 && A <= 400) {
+            setDoubleBreaker(400)
+        } else if (A > 400 && A <= 405) {
+            setDoubleBreaker(405)
+        } else if (A > 405 && A <= 410) {
+            setDoubleBreaker(410)
+        } else if (A > 410 && A <= 415) {
+            setDoubleBreaker(415)
+        } else if (A > 415 && A <= 420) {
+            setDoubleBreaker(420)
+        } else if (A > 420 && A <= 425) {
+            setDoubleBreaker(425)
+        } else if (A > 425 && A <= 430) {
+            setDoubleBreaker(430)
+        } else if (A > 430 && A <= 435) {
+            setDoubleBreaker(435)
+        } else if (A > 435 && A <= 440) {
+            setDoubleBreaker(440)
+        } else if (A > 440 && A <= 445) {
+            setDoubleBreaker(445)
+        } else if (A > 445 && A <= 450) {
+            setDoubleBreaker(450)
+        } else if (A > 450 && A <= 455) {
+            setDoubleBreaker(455)
+        } else if (A > 455 && A <= 460) {
+            setDoubleBreaker(460)
+        } else if (A > 460 && A <= 465) {
+            setDoubleBreaker(465)
+        } else if (A > 465 && A <= 470) {
+            setDoubleBreaker(470)
+        } else if (A > 470 && A <= 475) {
+            setDoubleBreaker(475)
+        } else if (A > 475 && A <= 480) {
+            setDoubleBreaker(480)
+        } else if (A > 480 && A <= 485) {
+            setDoubleBreaker(485)
+        } else if (A > 485 && A <= 490) {
+            setDoubleBreaker(490)
+        } else if (A > 490 && A <= 495) {
+            setDoubleBreaker(495)
+        } else if (A > 495 && A <= 500) {
+            setDoubleBreaker(500)
         } else {
             console.log("Os disjuntores 220 não suportam essa amperagem")
         }
@@ -439,7 +650,94 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
             setGeneralBreaker(195)
         } else if(A > 195 && A <= 200){
             setGeneralBreaker(200)
-        } else {
+        } else if (A > 200 && A <= 205) {
+            setGeneralBreaker(205)
+        } else if (A > 205 && A <= 210) {
+            setGeneralBreaker(210)
+        } else if (A > 210 && A <= 215) {
+            setGeneralBreaker(215)
+        } else if(A > 215 && A <= 220){
+            setGeneralBreaker(220)
+        } else if(A > 220 && A <= 225){
+            setGeneralBreaker(225)
+        } else if(A > 230 && A <= 235){
+            setGeneralBreaker(235)
+        } else if(A > 235 && A <= 240){
+            setGeneralBreaker(240)
+        } else if(A > 240 && A <= 245){
+            setGeneralBreaker(245)
+        } else if(A > 245 && A <= 250 ){
+            setGeneralBreaker(250)
+        } else if(A > 250 && A <= 255){
+            setGeneralBreaker(255)
+        } else if(A > 255 && A <= 260){
+            setGeneralBreaker(260)
+        } else if(A > 260 && A <= 265){
+            setGeneralBreaker(265)
+        } else if(A > 265 && A <= 270){
+            setGeneralBreaker(270)
+        } else if(A > 270 && A <= 275){
+            setGeneralBreaker(275)
+        } else if(A > 275 && A <= 280){
+            setGeneralBreaker(280)  
+        } else if(A > 280 && A <= 285){
+            setGeneralBreaker(285)  
+        } else if(A > 285 && A <= 290){
+            setGeneralBreaker(290)
+        } else if(A > 290 && A <= 295){
+            setGeneralBreaker(295)
+        } else if(A > 300 && A <= 305) {
+            setGeneralBreaker(305)
+        } else if(A > 305 && A <= 310) {
+            setGeneralBreaker(310)
+        } else if(A > 315 && A <= 320) {
+            setGeneralBreaker(320)
+        } else if(A > 320 && A <= 325){
+            setGeneralBreaker(325)  
+        } else if(A > 325 && A <= 330) {
+            setGeneralBreaker(330)
+        } else if(A > 335 && A <= 340){
+            setGeneralBreaker(340)
+        } else if(A > 340 && A <= 345){
+            setGeneralBreaker(345)
+        } else if(A > 350 && A <= 355){
+            setGeneralBreaker(355)
+        } else if(A > 355 && A <= 360){
+            setGeneralBreaker(360)
+        } else if(A > 365 && A <= 370){
+            setGeneralBreaker(370)
+        } else if(A > 370 && A <= 375){
+            setGeneralBreaker(375)
+        } else if(A > 380 && A <= 385){
+            setGeneralBreaker(385)
+        } else if(A > 385 && A <= 390){
+            setGeneralBreaker(390)
+        } else if(A > 390 && A <= 395){
+            setGeneralBreaker(395)
+        } else if(A > 395 && A <= 400){
+            setGeneralBreaker(400)
+        } else if(A > 400 && A <= 405){
+            setGeneralBreaker(405)
+        } else if(A > 405 && A <= 410){
+            setGeneralBreaker(410)
+        } else if(A > 410 && A <= 415){
+            setGeneralBreaker(415)
+        } else if(A > 415 && A <= 420){
+            setGeneralBreaker(420)
+        } else if(A > 420 && A <= 425){
+            setGeneralBreaker(425)
+        } else if(A > 425 && A <= 430){
+            setGeneralBreaker(430)
+        } else if(A > 430 && A <= 435){
+            setGeneralBreaker(435)
+        } else if(A > 435 && A <= 440){
+            setGeneralBreaker(395)
+        } else if(A > 440 && A <= 445){
+            setGeneralBreaker(445)
+        } else if(A > 445 && A <= 450){
+            setGeneralBreaker(450)
+        }
+          else {
             setGeneralBreaker(0)
         }
             return generalBreaker

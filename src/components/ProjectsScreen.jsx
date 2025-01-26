@@ -23,6 +23,7 @@ const ProjectsScreen = () => {
     const baseUrl = 'http://localhost:3000'
     const token = localStorage.getItem('accessToken');
     const userNameOrEmail = localStorage.getItem("userNameOrEmail")
+    const [userNameLower, setUserNameLower] = useState("")
     const [userName, setUserName] = useState("")
  
     useEffect(() => {
@@ -31,7 +32,7 @@ const ProjectsScreen = () => {
 
     useEffect(() => {
                           getUserName(userNameOrEmail)
-                        
+                        ''
                         
     },[])
 
@@ -58,7 +59,15 @@ const ProjectsScreen = () => {
             if (data && data.message) {
                 const { name } = data.message; // Extrair o nome do usuário
                 console.log(`Nome do usuário: ${name}`);
-                setUserName(name); // Certifique-se de que `setUserName` existe
+                let userNameLower = name.toLowerCase(); // Convert the name to lowercase
+                setUserNameLower(userNameLower); // Call the function with the lowercase value
+                
+                // Capitalize the first letter
+                let capitalizedValue = userNameLower.charAt(0).toUpperCase() + userNameLower.slice(1);
+                
+                // Update the username with the capitalized value
+                setUserName(capitalizedValue);
+
             } else {
                 console.log('Resposta inesperada do servidor:', data);
             }

@@ -57,7 +57,6 @@ const App = () => {
                 <Route path='/projects' element={<ProjectsScreen />} />
                 <Route path="/circuits" element={<CircuitsForm />} />
                 <Route path='/table' element={<Table />} />
-                {/* Se o usuário não estiver autenticado, redireciona para a página de login */}
                 <Route path="*" element={<Navigate to="/" />} /> 
             </Routes>
         </div>
