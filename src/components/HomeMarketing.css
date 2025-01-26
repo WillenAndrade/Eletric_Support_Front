@@ -1,0 +1,65 @@
+.homeMarketing {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.homeMarketing h1 {
+    font-size: 22px;
+    letter-spacing: 5px;
+    line-height: 40px;
+    padding: 0 10px;
+    color: white;
+}
+
+.homeText {
+    width: 100%;
+    height: 80vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../assets/imagens/blackimgtest.avif');
+    background-position: center;
+    background-size: cover;
+}
+
+
+.btn-signup-link {
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 8px 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+}
+    .btn-signup-link:hover {
+        background: white;
+        color: black;
+    }
+
+.homeText-two h1 {
+    color: black;
+}
+
+.homeText-two{
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 800px) {
+    .homeText h1 {
+        padding: 0 40px;
+    }
+}
+
