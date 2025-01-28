@@ -23,7 +23,6 @@ const CircuitsForm = ({projectNumber, projectName}) => {
     const [addPotence, setAddPotence] = useState(0)
     const [addAmount, setAddAmount] = useState(1)
     const [renderTable, setRenderTable] = useState(false)
-    //const [renderTable, setRenderTable] = useState(localStorage.getItem("localRenderTable"))
     const [localProjectNumber , setLocalProjectNumber] = useState("")
     const [localProjectName , setLocalProjectName] = useState("")
     const baseUrl = 'http://localhost:3000'
@@ -62,20 +61,20 @@ const CircuitsForm = ({projectNumber, projectName}) => {
 
         async function getCircuitsTableCounter() {
             try {
-                const token = localStorage.getItem('accessToken');  // Assuming the token is stored in localStorage
+                const token = localStorage.getItem('accessToken');
                 if (!token) {
                     console.log('Token not found');
-                    return;  // Optionally handle missing token here
+                    return;  
                 }
         
                 const response = await axios.get(`${baseUrl}/circuits${projectNumber}`, {
                     headers: {
-                        'Authorization': `Bearer ${token}`  // Send the token as a Bearer token
+                        'Authorization': `Bearer ${token}`  
                     }
                 });
         
                 const data = response.data;
-                setCircuitsTableCount(data.message);  // Assuming you want to set the count from the response
+                setCircuitsTableCount(data.message);  
         
             } catch (error) {
                 console.log('Erro ao fazer o fetch dos dados', error);
@@ -95,10 +94,10 @@ const CircuitsForm = ({projectNumber, projectName}) => {
     } 
 
     const handleSubmit = async (e) => {
-        const token = localStorage.getItem('accessToken');  // Assuming the token is stored in localStorage
+        const token = localStorage.getItem('accessToken'); 
                 if (!token) {
                     console.log('Token not found');
-                    return;  // Optionally handle missing token here
+                    return;  
                 }                
 
         try {

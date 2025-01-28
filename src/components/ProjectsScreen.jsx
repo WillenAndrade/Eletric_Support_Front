@@ -57,15 +57,13 @@ const ProjectsScreen = () => {
             const data = response.data;
     
             if (data && data.message) {
-                const { name } = data.message; // Extrair o nome do usuário
+                const { name } = data.message; 
                 console.log(`Nome do usuário: ${name}`);
-                let userNameLower = name.toLowerCase(); // Convert the name to lowercase
-                setUserNameLower(userNameLower); // Call the function with the lowercase value
+                let userNameLower = name.toLowerCase(); 
+                setUserNameLower(userNameLower); 
                 
-                // Capitalize the first letter
                 let capitalizedValue = userNameLower.charAt(0).toUpperCase() + userNameLower.slice(1);
                 
-                // Update the username with the capitalized value
                 setUserName(capitalizedValue);
 
             } else {
@@ -280,11 +278,11 @@ const setLinkNumber = () => {
         setCreateProject(false)
     }
     const handleLogout = () => {
-        localStorage.removeItem("localIsLogged"); // Remove a chave completamente
-        localStorage.removeItem("accessToken");  // Remove o token de acesso
-        localStorage.removeItem("refreshToken"); // Opcional: remova também o refresh token
+        localStorage.removeItem("localIsLogged"); 
+        localStorage.removeItem("accessToken");  
+        localStorage.removeItem("refreshToken"); 
         localStorage.removeItem("localIsLogged");
-        window.location.href = "/login"; // Redireciona para a página de login
+        window.location.href = "/login"; 
     };
 
    

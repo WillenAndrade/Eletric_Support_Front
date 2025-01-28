@@ -21,15 +21,14 @@ const Materials = ({projectNumber}) => {
         try {
             const token = localStorage.getItem('accessToken');
                 
-            // Handle missing token
             if (!token) {
                 console.log('Token not found');
-                return;  // Optionally handle missing token here
+                return;  
             }
 
             const response = await axios.get(`${baseUrl}/circuits${projectNumber}`, {  
                 headers: {
-                    'Authorization': `Bearer ${token}`  // Send the token as a Bearer token
+                    'Authorization': `Bearer ${token}`  
                 }
             });
 
@@ -155,12 +154,3 @@ const Materials = ({projectNumber}) => {
 }
 
 export default Materials
-    // Exemplo de painéis solares...
-/*
-     {allMotors > 0 && <div className="product-items">
-                                <div className="product-icon"><div className="panel-icon"></div></div>
-                                <h2>
-                                    <p>{allMotors == "" ? <p>0</p>: <p id='materials-zoom'>{allMotors}</p>}Painéis S</p>
-                                </h2>
-                            </div>}  
-*/

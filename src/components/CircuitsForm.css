@@ -28,8 +28,9 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, rgb(166, 225, 233), rgb(4,4,32), rgb(166, 225, 233));
+    
     background-size: cover;
+    background-image: url("../assets/imagens/bluesky.avif");
 }
 
 .box {

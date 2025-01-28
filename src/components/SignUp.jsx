@@ -20,11 +20,8 @@ const SignUp = () => {
     const baseUrl = 'http://localhost:3000'
 
        const handleSignUp = async (e) => {
-            e.preventDefault(); // Prevenir comportamento padrão do formulário
+            e.preventDefault(); 
         
-             // Estado para erros no formulário
-        
-            // Validações
             if (!validateEmail(email)) {
                 setFormError('Por favor, insira um email válido.');
                 return;
@@ -41,7 +38,7 @@ const SignUp = () => {
             }
         
             try {
-                // Enviar a requisição para a API de signup
+                
                 const response = await axiosInstance.post(
                     `${baseUrl}/signup`,
                     { username, email, password },
@@ -50,20 +47,20 @@ const SignUp = () => {
                     }
                 );
         
-                // Obter os tokens do backend
+                
                 const { token, refreshToken } = response.data.data;
         
                 if (token && refreshToken) {
-                    // Armazenar os tokens no localStorage
+                    
                     localStorage.setItem('accessToken', token);
                     localStorage.setItem('refreshToken', refreshToken);
-                    localStorage.setItem('localIsLogged', true); // Indicar que o usuário está logado
+                    localStorage.setItem('localIsLogged', true); 
         
-                    // Redirecionar o usuário para a página de projetos
+                
                     window.location.href = '/projects';
                 }
             } catch (error) {
-                // Manipular erros retornados pelo servidor
+                
                 if (error.response) {
                     const errorMessage = error.response.data.message;
         
@@ -101,6 +98,7 @@ const SignUp = () => {
                  <h2>Welcome back!</h2>
             </div>
                 <div className={formError.length > 0 ? "sign-up-container":  "sign-up-container active"}>
+                    <div className="get-start-btn-container">ES</div>
                     <h1>Criar conta!</h1>
                         <div className="input-container"><div className="form-icons"><FaRegUser size={30}/></div><input className="sign-up-input" type="text" aria-label="Digite seu Usuário" maxLength={35} name="username" id='username' placeholder='Usuário' onChange={(e)=> setUsername(e.target.value)} onClick={(e) => setFormError("")} required/></div>
                         <div className="input-container"><div className="form-icons"><MdOutlineMailOutline size={30}/></div><input className="sign-up-input" type="text" aria-label="Digite seu Email" maxLength={35} name="email" id='email' placeholder='Email' onChange={(e)=> setEmail(e.target.value)} onClick={(e) => setFormError("")} required/></div>

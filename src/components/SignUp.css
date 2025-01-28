@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
     background: rgb(56, 112, 233);
+    background-image: url("../assets/imagens/bluesky2.avif");
+    background-position: center;
+    background-size: cover;
 }
 
 .sign-up-title {
@@ -30,6 +33,30 @@
     gap: 10px;
     background: white;
 } 
+
+.get-start-btn-container {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    border-radius: 50px;
+    color: white;
+    color: rgb(22, 65, 185);
+    background: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    transition: 0.3s ease-in-out;
+    border: 2px solid rgb(22, 65, 185);
+}
+.get-start-btn-container:hover {
+    background: black;
+    color: white;
+    border: 2px solid;
+}
 
 .form-sign-up {
     width: 100%;
@@ -124,7 +151,7 @@
 @media (min-width: 320px) {
     .sign-up-container {
         width: 360px;
-        height: 420px;
+        height: 480px;
     }
         .input-container {
             width: 310px;
@@ -138,7 +165,7 @@
 @media (min-width: 360px) {
     .sign-up-container {
         width: 350px;
-        height: 420px;
+        height: 460px;
     }
         .input-container {
             width: 350px;

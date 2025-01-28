@@ -240,11 +240,11 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
                 setMonoBreaker(205)
             } else if(A > 200 && A <= 205){
                 setMonoBreaker(205)
-            } else if(A > 205 && A <= 210) {
+            } else if(A > 205 && A <= 210){
                 setMonoBreaker(210)
-            } else if(A > 210 && A <= 215) {
+            } else if(A > 210 && A <= 215){
                 setMonoBreaker(215)
-            } else if(A > 215 && A <= 220) {
+            } else if(A > 215 && A <= 220){
                 setMonoBreaker(220)
             } else if(A > 220 && A <= 225){
                 setMonoBreaker(225)

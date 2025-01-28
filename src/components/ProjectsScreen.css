@@ -9,6 +9,9 @@
     background-size: cover;
     font-family: 'Poppins', sans-serif;
     background: rgb(9, 16, 43);
+    background-image: url("../assets/imagens/darknight.avif");
+    background-position: center;
+    background-size: cover;
 }
 
 .project-image{
