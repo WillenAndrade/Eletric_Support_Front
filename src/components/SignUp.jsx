@@ -105,6 +105,7 @@ const SignUp = () => {
                         <div className="input-container"><div className="form-icons"><RiLockPasswordLine size={30}/></div><input className="sign-up-input" type="password" aria-label="Digite sua Senha" maxLength={35} name="password" id='password' placeholder='Senha' onChange={(e)=> setPassword(e.target.value)} onClick={(e) => setFormError("")} required/></div>
                         <div className="input-container"><div className="form-icons"><RiLockPasswordLine size={30}/></div><input className="sign-up-input" aria-label="Confirme sua senha" type="password" maxLength={35}  id='password' placeholder='Confirme sua senha' onChange={(e)=> setConfirmPassword(e.target.value)} onClick={(e) => setFormError("")} required/></div>
                         <p className={formError.length > 0 ? "formError-p" : "formError-p active"}>{formError}</p>
+                        <Link className="pricacy-link" to="/privacy">Política de Privacidade</Link>
                         <div className="sign-up-buttons">
                         <Link className="link-to-home" to="/home">Voltar</Link>
                         <button className={ formError.length > 0 ? "sign-up-btn-two" : "sign-up-btn-two active" } onClick={(e)=> handleSignUp(e)}>Cadastrar</button>

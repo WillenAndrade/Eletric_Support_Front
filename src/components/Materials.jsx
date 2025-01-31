@@ -117,35 +117,35 @@ const Materials = ({projectNumber}) => {
                            {newLightBulbs > 0 &&  <div className="product-items">
                                     <div className="product-icon"><div className="light-icon"></div></div> 
                                     <h2>
-                                        <p>{newLightBulbs == "" ? <p>0</p>: <p id='materials-zoom'>{newLightBulbs}</p>}Lâmpadas</p>
+                                        <p>{newLightBulbs == "" ? <p>0</p>: <p id='materials-zoom'>{newLightBulbs}</p>}{newLightBulbs > 1 ? <h2>Lâmpadas</h2> :<h2>Lâmpada</h2>}</p>
                                     </h2>
                             </div>}
                         
                             {newOutlets > 0 && <div className="product-items">
                                     <div className="product-icon"><div className="outlet-icon"></div></div>
                                     <h2>
-                                        <p>{newOutlets == "" ? <p>0</p>: <p id='materials-zoom'>{newOutlets}</p>}Tomadas</p>
+                                        <p>{newOutlets == "" ? <p>0</p>: <p id='materials-zoom'>{newOutlets}</p>}{newOutlets > 1 ? <h2>Tomadas</h2> : <h2>Tomada</h2>}</p>
                                     </h2>
                             </div>}
 
                             {newShowers > 0 && <div className="product-items">
                                 <div className="product-icon"><div className="shower-icon"></div></div>
                                 <h2>
-                                    <p>{newShowers == "" ? <p>0</p>: <p id='materials-zoom'>{newShowers}</p>}Chuveiros</p>
+                                    <p>{newShowers == "" ? <p>0</p>: <p id='materials-zoom'>{newShowers}</p>}{newShowers > 1 ? <h2>Chuveiros</h2> : <h2>Chuveiro</h2>}</p>
                                 </h2>
                             </div>}
 
                             {newAir > 0 && <div className="product-items">
                                 <div className="product-icon"><div className="air-icon"></div></div>
                                 <h2>
-                                    <p>{newAir == "" ? <p>0</p>: <p id='materials-zoom'>{newAir}</p>}Ar</p>
+                                    <p>{newAir == "" ? <p>0</p>: <p id='materials-zoom'>{newAir}</p>}{newAir > 1 ? <h2>Ares</h2>: <h2>Ar</h2>}</p>
                                 </h2>
                             </div>}
 
                             {allMotors > 0 && <div className="product-items">
                                 <div className="product-icon"><div className="motor-icon"></div></div>
                                 <h2>
-                                    <p>{allMotors == "" ? <p>0</p>: <p id='materials-zoom'>{allMotors}</p>}Motores</p>
+                                    <p>{allMotors == "" ? <p>0</p>: <p id='materials-zoom'>{allMotors}</p>}{allMotors > 1 ? <h2>Motores</h2> : <h2>Motor</h2>}</p>
                                 </h2>
                             </div>}
              </div>

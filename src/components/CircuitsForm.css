@@ -28,9 +28,10 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    
     background-size: cover;
     background-image: url("../assets/imagens/bluesky.avif");
+    background-image: url("../assets/imagens/home.jpeg");
+    background-position: bottom;
 }
 
 .box {

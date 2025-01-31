@@ -31,6 +31,7 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 //import { refreshAccessToken } from './utils/axiosConfig';  // Importa a função de renovação de token
 import axiosInstance, { refreshAccessToken } from './utils/axiosConfig';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 const App = () => {
     const [isAuthReady, setIsAuthReady] = useState(false); // Para saber se a autenticação foi verificada
@@ -58,6 +59,8 @@ const App = () => {
                 <Route path="/circuits" element={<CircuitsForm />} />
                 <Route path='/table' element={<Table />} />
                 <Route path="*" element={<Navigate to="/" />} /> 
+                <Route path='/privacy' element={<PrivacyPolicy />} />
+                
             </Routes>
         </div>
     );

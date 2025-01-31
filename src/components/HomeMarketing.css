@@ -1,6 +1,6 @@
 .homeMarketing {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     color: white;
     display: flex;
     justify-content: center;
@@ -56,6 +56,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.marketing-footer {
+    width: 100%;
+    height: 80px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .my-name {
+        color: white;
+        cursor: pointer;
+    }
+
+    .marketing-footer span {
+        font-size: 20px;
+        color: lightgreen;
+    }
+
+.toggleInfoDiv {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+}
+.toggleInfoDiv h2 {
+    color: white;
+}
+
+.toggleInfoDiv span {
+    font-size: 20px;
+    color: lightgreen;
 }
 
 @media (min-width: 800px) {
