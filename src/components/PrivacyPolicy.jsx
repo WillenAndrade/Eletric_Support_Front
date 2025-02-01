@@ -53,6 +53,7 @@ const PrivacyPolicy = () => {
             <h2>Contato</h2>
             <p>Se você tiver dúvidas sobre esta Política de Privacidade ou sobre como tratamos suas informações pessoais, entre em contato pelo e-mail: Willen_Developer@outlook.com</p>
         </div>
+        <Link className="link-to-signup" to="/signup">Entendi!</Link>
         </>
         
     )
