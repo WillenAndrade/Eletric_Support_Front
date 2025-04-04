@@ -12,15 +12,15 @@
 
 .sign-up-container {
     width: 300px;
-    height: 440px;
+    height: 460px;
     color: rgb(56, 112, 233);
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     align-items: center;
     border-radius: 25px;
     border:  2px solid rgb(56, 112, 233);
-    gap: 5px;
+    gap: 8px;
     background: white;
 } 
 
@@ -41,6 +41,7 @@
     font-size: 35px;
     transition: 0.3s ease-in-out;
     border: 2px solid rgb(22, 65, 185);
+    margin-top: 10px;
 }
 .get-start-btn-container:hover {
     background: black;
@@ -161,13 +162,14 @@
     text-decoration: underline;
     font-size: 16px;
     transition: 0.3s ease-in-out;
+    display: none;
 }
     .terms-btn:hover {
         border: none;
         color:#3D9DB3;
     }
 
-/* Estilo do modal */
+
 .modal {
     position: fixed;
     top: 0;
@@ -184,7 +186,7 @@
     background: white;
     padding: 20px;
     border-radius: 25px;
-    width: 50%;
+    width: 80%;
     max-height: 80%;
     overflow-y: auto;
     display: flex;
@@ -203,9 +205,10 @@
 }
 .modal-content span {
     font-size: 16px;
+    font-weight: bold;
 }
 
-/* Estilo da rolagem do texto dos termos */
+
 .terms-text {
     max-height: 200px;
     overflow-y: auto;
@@ -214,7 +217,7 @@
     margin-bottom: 10px;
 }
 
-/* Botão de aceite */
+
 .accept-btn {
     background: white;
     color: black;
@@ -230,7 +233,7 @@
     border: none;
 }
 
-/* Desabilitando o botão de cadastro até aceitar os termos */
+
 .sign-up-btn-two.disabled {
     background: gray;
     cursor: not-allowed;
@@ -240,7 +243,7 @@
 @media (min-width: 320px) {
     .sign-up-container {
         width: 360px;
-        height: 500px;
+        height: 480px;
     }
         .input-container {
             width: 310px;
@@ -254,7 +257,7 @@
 @media (min-width: 360px) {
     .sign-up-container {
         width: 350px;
-        height: 500px;
+        height: 480px;
     }
         .input-container {
             width: 350px;
@@ -262,6 +265,12 @@
             .sign-up-input {
                 width: 320px !important;
             }
+}
+
+@media (min-width: 800px) {
+    .modal-content {
+        width: 50%;
+    }
 }
 
 @media (min-width: 800px) {

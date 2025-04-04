@@ -43,7 +43,7 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
     const [generalCurrent, setGeneralCurrent] = useState()
     const [generalBreaker, setGeneralBreaker] = useState()
     const [pdfHidden, setPdfHidden] = useState(true)
-    const [advice, setAdvice] = useState('');
+    const [advice, setAdvice] = useState('')
     const [reloadMaterials, setReloadMaterials] = useState(false)
     const baseUrl = 'http://localhost:3000'
     
@@ -85,8 +85,6 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
                     }
                 });
         
-                
-                
                 const data = response.data.message;
         
                 if (Array.isArray(data)) {
@@ -133,7 +131,6 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
                 window.location.reload(true)
                 setReloadMaterials(!reloadMaterials)
                 
-            
             } catch (error) {
                 console.error('Error deleting circuit:', error);
                 alert('An error occurred. Please try again.'); 
@@ -280,10 +277,7 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
                 setMonoBreaker(300)
             } else if(A > 300 && A <= 305){
                 setMonoBreaker(305)
-            }
-
-
-            else if(A > 305 && A <= 310){
+            } else if(A > 305 && A <= 310){
                 setMonoBreaker(310)
             } else if(A > 310 && A <= 315){
                 setMonoBreaker(315)

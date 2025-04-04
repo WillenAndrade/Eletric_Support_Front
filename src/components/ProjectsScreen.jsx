@@ -32,59 +32,60 @@ const ProjectsScreen = () => {
 
     useEffect(() => {
                           getUserName(userNameOrEmail)
-                        ''
-                        
     },[])
 
-    async function getUserName(userNameOrEmail) {
-        if (!userNameOrEmail) {
-            console.log('Por favor, forneça um nome de usuário ou e-mail.');
-            return;
-        }
-    
-        try {
+
+        async function getUserName(userNameOrEmail) {
+            if (!userNameOrEmail) {
+                console.log('Por favor, forneça um nome de usuário ou e-mail.');
+                return;
+            }
+        
             if (!token) {
                 console.log('Nenhum token encontrado. Por favor, faça login.');
                 return;
             }
-    
-            const response = await axios.get(`${baseUrl}/users/${userNameOrEmail}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-    
-            const data = response.data;
-    
-            if (data && data.message) {
-                const { name } = data.message; 
-                console.log(`Nome do usuário: ${name}`);
-                let userNameLower = name.toLowerCase(); 
-                setUserNameLower(userNameLower); 
-                
-                let capitalizedValue = userNameLower.charAt(0).toUpperCase() + userNameLower.slice(1);
-                
-                setUserName(capitalizedValue);
-
-            } else {
-                console.log('Resposta inesperada do servidor:', data);
-            }
-        } catch (error) {
-            console.error('Erro ao obter o nome do usuário:', error);
-    
-            if (error.response) {
-                console.log('Erro do servidor:', error.response.data);
-    
-                if (error.response.status === 401) {
-                    console.log('Token expirado ou inválido. Por favor, faça login novamente.');
-                } else if (error.response.status === 404) {
-                    console.log('Usuário não encontrado.');
+        
+            try {
+                const response = await axios.post(`${baseUrl}/users/search`, 
+                    { userNameOrEmail },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    }
+                );
+        
+                const data = response.data;
+        
+                if (data && data.message) {
+                    const { name } = data.message;
+                    console.log(`Nome do usuário: ${name}`);
+        
+                    let userNameLower = name.toLowerCase();
+                    setUserNameLower(userNameLower);
+        
+                    let capitalizedValue = userNameLower.charAt(0).toUpperCase() + userNameLower.slice(1);
+                    setUserName(capitalizedValue);
+                } else {
+                    console.log('Resposta inesperada do servidor:', data);
                 }
-            } else {
-                console.log('Erro de rede ou outro erro:', error.message);
+            } catch (error) {
+                console.error('Erro ao obter o nome do usuário:', error);
+        
+                if (error.response) {
+                    console.log('Erro do servidor:', error.response.data);
+        
+                    if (error.response.status === 401) {
+                        console.log('Token expirado ou inválido. Por favor, faça login novamente.');
+                    } else if (error.response.status === 404) {
+                        console.log('Usuário não encontrado.');
+                    }
+                } else {
+                    console.log('Erro de rede ou outro erro:', error.message);
+                }
             }
         }
-    }
 
         async function getProjectNames() {
 
@@ -156,7 +157,6 @@ const ProjectsScreen = () => {
         }
     }
 }
-
 
 async function deleteProjectAndCircuits(project) {
     const token = localStorage.getItem('accessToken');
