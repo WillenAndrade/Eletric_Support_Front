@@ -28,7 +28,6 @@ const Home = () => {
             e.preventDefault();
 
             try {
-
                 console.log('Iniciando login...');
                 const response = await axiosInstance.post(`/login`, { usernameOrEmail, password });
                 localStorage.setItem("userNameOrEmail", usernameOrEmail)

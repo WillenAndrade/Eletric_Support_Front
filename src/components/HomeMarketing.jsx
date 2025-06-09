@@ -17,7 +17,7 @@ const HomeMarketing = () => {
          <p onClick={()=>setToggleInfo(true)} onMouseEnter={()=>setToggleInfo(true)} className='my-name'>Create by <span> Willen Andrade</span></p>
         </div> :  <div className="toggleInfoDiv">
             <h2><span>Willen_Developer@outlook.com</span></h2>
-            <h2><span>(18) 99736 7874</span></h2>
+            <h2><span>(48) 99140 1779</span></h2>
         </div>}
         </>
     )
