@@ -43,7 +43,6 @@
         color: black;
         cursor: pointer;
         transition: 0.3s ease-in-out;
-          
     }
 
     .product-items h2:hover {
@@ -114,6 +113,18 @@
         background-position: center;
         cursor: pointer;
 
+    }
+
+    .product-type {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .product-type h2 {
+        width: 100%;
+        text-align: center;
     }
 
     @media (min-width: 400px) {
