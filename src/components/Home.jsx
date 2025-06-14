@@ -57,9 +57,9 @@ const Home = () => {
             <header onMouseLeave={(e) => setToggleLoginBtn(false)}>
                 <div className="es-logo" onMouseEnter={(e) => setToggleLoginBtn(false)}><p className="es-logo-p">ES</p></div>
                 <div className={toggleLoginBtn ? "form-login active" : "form-login"}>
-                    <form>
-                        <input onClick={(e) => setMessage(false)} type="text" maxLength={35} name="usernameOrEmail" id='username' placeholder='Usuário' onChange={(e)=> setUserNameOrEmail(e.target.value)} required/>
-                        <input onClick={(e) => setMessage(false)} type="password" maxLength={25} name="password" id="password" placeholder='Senha' onChange={(e)=> setPassword(e.target.value)} required/>
+                    <form className='home-form'>
+                        <input onClick={(e) => setMessage(false)} type="text" maxLength={35} className='home-user-input' name="usernameOrEmail" id='username' placeholder='Usuário' onChange={(e)=> setUserNameOrEmail(e.target.value)} required/>
+                        <input onClick={(e) => setMessage(false)} type="password" maxLength={25} className='home-password-input'  name="password" id="password" placeholder='Senha' onChange={(e)=> setPassword(e.target.value)} required/>
                         <button onClick={(e)=> Login(e)}>Entrar</button>
                     </form>
                     <p className={message ?'message': "message active"}>Usuário ou senha inválidos!</p>
@@ -85,3 +85,4 @@ const Home = () => {
 }
 
 export default Home
+

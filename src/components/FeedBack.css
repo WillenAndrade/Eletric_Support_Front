@@ -1,0 +1,289 @@
+.feedback-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.feedback-top {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feedback-form-container {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(253,170,58);
+    background: lightblue;
+}
+
+#feedback-form {
+    width: 95%;
+    height: 600px;
+    border: 2px solid black;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    padding: 30px 0;
+    border: 2px solid lightblue;
+    position: relative;
+}
+
+.feedback-exit {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.feedback-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.es-logo-feedback {
+     width: 60px;
+     height: 60px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color:rgb(22, 65, 185);
+     border: 2px solid rgb(22, 65, 185);
+     background: white;
+     border-radius: 50px; 
+     cursor: pointer;
+     transition: 0.3s ease-in-out;
+     font-family: 'Poppins', sans-serif;
+     font-size: 35px;
+     transition: 0.3s ease-in-out; 
+}
+
+.hidden {
+    display: none;
+}
+
+#successMessage {
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+}
+
+.logoForm {
+    height: 20%;
+}
+
+.improve {
+    font-size: 24px;
+    font-weight: lighter;
+    font-family: "Vidaloka", serif;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.form-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+}
+
+.form-title h2 {
+    color: black;
+    width: 90%;
+}
+
+.feedback-name-input {
+    margin: 10px;
+    width: 90% !important;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: 400;
+    padding: 10px;
+    color: black !important;
+    border: 1px solid rgb(115, 192, 218);
+}
+
+.feedback-name-input::placeholder {
+    font-size: 18px;
+    border-radius: 15px;
+    font-weight: 400;
+    font-family: monospace;
+    color: gray !important;
+    outline: none;
+}
+
+.feedback-name-input:focus {
+    border-color: lightblue;
+    outline: none;
+}
+
+textarea {
+    margin: 10px;
+    width: 90%;
+    min-height: 60px;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 10px;
+    color: black;
+    border: 1px solid rgb(115, 192, 218);
+}
+
+textarea:focus {
+    border: 1px solid rgb(39, 117, 143);
+    outline: none;
+}
+
+textarea::placeholder {
+    font-size: 20px;
+    border-radius: 5px;
+    color: gray;
+}
+
+.feedback-button {
+    width: 80%;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid rgb(184, 122, 43);
+    color: white;
+    background: black;
+    font-weight: lighter;
+}
+
+.feedback-button:hover {
+    color: blue;
+    border: 1px solid blue;
+    background: white;
+}
+
+footer {
+    background: rgb(18, 20, 22);
+    background: white;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    color: rgb(184, 122, 43);
+    background-image: url("./assets/nossa-historia-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    background: white;
+    padding: 10px 20px; 
+    border-radius: 25px;
+    border: 2px solid blue;
+    color: white;
+    background: rgb(18, 20, 22);
+    transition: 0.3s ease-in-out;
+}
+
+footer a:hover {
+    border: 2px solid white;
+}
+
+@media (min-width: 600px) {
+    body {
+        font-size: 16px; 
+    }
+
+    .formContainer {
+        height: 600px;
+    }
+
+    #feedback-form {
+        width: 500px;
+        height: 600px;
+    }
+
+    .feedback-button {
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: 700px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    #feedback-form {
+        max-width: 500px;
+        height: 600px;
+        
+    }
+
+    .feedback-button {
+        width: 60%;
+        font-size: 20px;
+    }
+
+    textarea::placeholder {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 800px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    .feedback-form {
+        width: 500px;
+        height: 600px;
+    }
+
+    textarea::placeholder {
+        font-size: 20px;
+    }
+
+    .feedback-button {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 900px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    .feedback-form {
+        width: 500px;
+        height: 600px;
+        padding: 20px 0;
+    }
+
+    textarea::placeholder {
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
+
+

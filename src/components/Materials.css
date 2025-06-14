@@ -21,7 +21,7 @@
 
     .product-items {
         min-width: 140px;
-        height: 100px;
+        min-height: 120px;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -39,7 +39,7 @@
         }
     
     .product-items h2 {
-        font-size: 20x;
+        font-size: 18px;
         color: black;
         cursor: pointer;
         transition: 0.3s ease-in-out;
@@ -125,7 +125,31 @@
     .product-type h2 {
         width: 100%;
         text-align: center;
+        margin: 0;
     }
+    .product-type .money {
+        
+        font-size: 16px;
+    }
+
+    .total-price {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .total-price h2 {
+        color: darkgreen;
+    }
+
+    .currency-sign {
+        margin: 0 3px 0 3px;
+        font-size: 18px;
+        color: darkgreen;
+    }
+
+
 
     @media (min-width: 400px) {
         .materials-container {

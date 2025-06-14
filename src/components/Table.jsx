@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react'
 import './Table.css'
-
+import { Link } from 'react-router-dom';
 import Materials from './Materials';
+import SecondHeader from './SecondHeader';
 import axios from 'axios'
 import generatePDF, { Resolution, Margin } from 'react-to-pdf';
-import { Link } from 'react-router-dom';
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { FaHome } from "react-icons/fa";
 import { IoDocumentTextOutline } from "react-icons/io5";
@@ -741,6 +741,7 @@ const Table = ({monoBreaker, doubleBreaker, projectNumber, projectName}) => {
               ]
     return(
         <div className="page">
+            <SecondHeader />
              <div id="content-id">
            {projectName ? <h1 className="project-name">{projectName}</h1> : <h1>Tabela de circuitos</h1>}
             {circuitsTable.length > 0 ? <div className="table-container">

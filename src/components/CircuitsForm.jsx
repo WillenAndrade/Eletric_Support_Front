@@ -240,7 +240,7 @@ const CircuitsForm = ({projectNumber, projectName}) => {
             {projectName ? <h1 className="project-title">{projectName}</h1> : <h1 className="project-title">Circuitos</h1>}
             <div className="circuitInfo">
                 <div className="circuitNumber">
-                    <span>Circuito</span>
+                    <span className="circuit-form-span">Circuito</span>
                     <div className="numberDisplay">
                         <div className="left" onClick={handleClickMinus}><p><FaLessThan /></p></div>
                         <div className="middle"><p className="middle">{count}</p></div>
@@ -248,13 +248,13 @@ const CircuitsForm = ({projectNumber, projectName}) => {
                     </div>
                 </div>
                 <div className="circuitName">
-                    <span>Nome</span>
+                    <span className="circuit-form-span">Nome</span>
                     <input onChange={(e) => setName(e.target.value)} value={name} name="name" type="text" className="nameInfo"/>
                 </div>
             </div>
             <div className="circuitDetails">
                 <div className="circuitType">
-                    <span>Tipo</span>
+                    <span className="circuit-form-span">Tipo</span>
                     <select className="typeInfo" value={patternInfo} name="patternInfo" onChange={(e) => handleType(e.target.value)}>
                         <option  value="iluminacao">Iluminação</option>
                         <option  value="tug">TUG</option>
@@ -269,12 +269,12 @@ const CircuitsForm = ({projectNumber, projectName}) => {
                 </div>
                 {!threePhase ? 
                 <div className="circuitTension"  >
-                    <span>Tensão</span>
+                    <span className="circuit-form-span">Tensão</span>
                     <ButtonTension handleTension={handleTension} mono={mono} tension={tension}/>
                 </div> : 
                 <div className="threePhase"><h2></h2></div>}
                 <div className="circuitCabe">
-                    <span>Fio</span>
+                    <span className="circuit-form-span">Fio</span>
                     <select  className="cabeInfo" value={cabe} name="cabe" onChange={(e) => setCabe(e.target.value)}>
                         <option value="1,5">1.5mm</option>
                         <option value="2,5">2.5mm</option>
@@ -290,22 +290,22 @@ const CircuitsForm = ({projectNumber, projectName}) => {
             <h2 className="addDevicesTitle">Dispositivos Adicionais</h2>
             <div className="circuitAddPotence">
             <div className="potence">
-                <span>Potência (W)</span>
+                <span className="circuit-form-span">Potência (W)</span>
                 <input type="number" min = "0" onChange={(e)=> setAddPotence(e.target.value)} onKeyUp={calcAmperPotence} value={addPotence}  className="potenceInfo"/>
             </div>
             <div className="amount">
-                <span>Quantidade</span>
+                <span className="circuit-form-span">Quantidade</span>
                 <input type="number" min = "0" onChange={(e) => setAddAmount(e.target.value)} onKeyUp={calcAmperPotence}  value={addAmount}  className="amountInfo"/>
             </div>
             </div>
         </div>  :
         <div className="circuitPotence">
                 <div className="potence">
-                    <span>Potência (w)</span>
+                    <span className="circuit-form-span">Potência (w)</span>
                     <input type="number" min = "0" onChange={(e)=> setPotence(e.target.value)} onKeyUp={calcAmperPotence} value={potence} name="potence" className="potenceInfo"/>
                 </div>
                 <div className="amount">
-                    <span>Quantidade</span>
+                    <span className="circuit-form-span">Quantidade</span>
                     <input type="number" min = "0" onChange={(e) => setAmount(e.target.value)} onKeyUp={calcAmperPotence}  value={amount}  name="amount" className="amountInfo"/>
                 </div>
         </div> }

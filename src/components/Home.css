@@ -19,10 +19,11 @@ header {
         background: white;
     }
 
-form {
+.home-form {
     display: flex;
     gap: 5px;
     justify-content: center;
+    align-items: center;
 }
 
 .toggle-login-div {
@@ -71,7 +72,7 @@ form {
     display: none;
 }
     .form-login.active {
-        display: block
+        display: block;
     }
 
 .message {
@@ -97,16 +98,16 @@ button {
         border: 2px solid rgb(22, 65, 185);
     }
 
-input[type=text], input[type=password] {
+.home-user-input, .home-password-input {
     width: 150px;
     color:rgb(22, 65, 185);
 }
 
-input[type=text]::placeholder, input[type=password]::placeholder {
+.home-user-input::placeholder, .home-password-input::placeholder {
    color: black;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+.home-user-input:focus, .home-password-input:focus {
     border-color: rgb(17, 43, 115); 
     outline: none;
 }
@@ -235,7 +236,7 @@ a::after {
             background: black;
             justify-content: center;
         }
-        form {
+        .home-form {
             width: 100%;
             display: flex;
             gap: 10px;
@@ -243,7 +244,7 @@ a::after {
             flex-direction: column;
         }
 
-        input[type=text], input[type=password] {
+        .home-user-input, .home-password-input {
             width: 250px;
             color:rgb(22, 65, 185);
         }
@@ -257,14 +258,14 @@ a::after {
             background: black;
             justify-content: center;
         }
-        form {
+        .home-form {
             display: flex;
             gap: 3px;
             justify-content: center;
             flex-direction: row;
         }
 
-        input[type=text], input[type=password] {
+        .home-user-input, .home-password-input {
             width: 140px;
             color:rgb(22, 65, 185);
         }
@@ -282,13 +283,13 @@ a::after {
             padding: 40px;
         }
         
-        form {
+        .home-form {
             display: flex;
             gap: 5px;
             justify-content: right;
         }
 
-        input[type=text], input[type=password] {
+        .home-user-input, .home-password-input {
             width: 150px;
             color:rgb(22, 65, 185);
         }
@@ -347,4 +348,6 @@ a::after {
         100% {
             transform: scale(1); 
           }
-      }
+      } 
+
+  

@@ -6,8 +6,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-span {
+.circuit-form-span {
     font-size: 14px;
+    color: black;
 }
 
 .topButtons {
@@ -75,7 +76,7 @@ span {
             transition: 0.3s ease-in-out;
         }
         .exit p {
-            font-size: 22px;
+            font-size: 18px;
         }
 
 .project-title {
